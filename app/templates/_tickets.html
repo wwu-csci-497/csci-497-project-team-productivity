@@ -1,17 +1,12 @@
-    <table class="table table-hover">
-        <tr>
-            <td width="70px">
-                <a href="{{ url_for('user', username=ticket.author.username) }}">
-                    <img src="{{ ticket.author.avatar(70) }}" />
-                </a>
-            </td>
-            <td>
-                <a href="{{ url_for('user', username=ticket.author.username) }}">
-                    {{ ticket.author.username }}
-                </a>
-                says:
-                <br>
-                {{ ticket.description }}
-            </td>
-        </tr>
-    </table>
+    <dl class="row">
+        <dt class="col-sm-3">Author</dt>
+        <dd class="col-sm-9"><a href="{{ url_for('user', username=ticket.author.username) }}">
+            @{{ ticket.author.username }}</a>
+        </dd>
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">{{ ticket.description }}</dd>
+        <dt class="col-sm-3 text-truncate">Priority</dt>
+        <dd class="col-sm-9">{{ticket.priority}}</dd>
+        <dt class="col-sm-3">Link</dt>
+        <dd class="col-sm-9"><a href="{{ticket.link}}"></a>{{ticket.link}}</dd>
+    </dl>
