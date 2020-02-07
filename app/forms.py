@@ -6,8 +6,9 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, \
 from app.models import User
 
 class TicketForm(FlaskForm):
-    description = TextAreaField("Description")
-    priority = SelectField('Priority', choices = [('1',1), ('2', 2), ('2', 2), ('3', 3), ('4', 4), ('5', 5)])
+    description = TextAreaField("Description", validators=[DataRequired()])
+    priority = SelectField('Priority', choices = [('1',1), ('2', 2), ('2', 2), ('3', 3), ('4', 4), ('5', 5)], validators=[DataRequired()])
+    link = StringField('Direct Link')
     submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):

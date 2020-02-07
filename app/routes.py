@@ -5,7 +5,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
     ResetPasswordRequestForm, ResetPasswordForm, TicketForm
-from app.models import User, Post
+from app.models import User, Post, Ticket
 from app.email import send_password_reset_email
 
 
@@ -41,6 +41,12 @@ def index():
 @app.route('/ticket', methods = ['GET', 'POST'])
 def ticket():
     form = TicketForm()
+    if form.validate_on_submit():
+        ticket = Ticket(description=form.description.data, author=current_user, priority=form.priority.data, link=form.link.data)
+        db.session.add(ticket)
+        db.session.commit()
+        flash('Your ticket is now live!')
+        return redirect(url_for('index'))
     return render_template('ticket.html', title='Home', form=form)
 
 @app.route('/explore')
