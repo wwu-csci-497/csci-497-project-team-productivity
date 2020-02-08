@@ -16,3 +16,8 @@ body {
   width: 15;
   border-radius: 15px;
 }
+
+ 
+.jumbotron {
+    padding: 5em inherit;
+} 
