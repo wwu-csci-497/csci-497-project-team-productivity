@@ -1,14 +1,8 @@
-    <dl class="row">
-        <dt class="col-sm-3">Author</dt>
-        <dd class="col-sm-9"><a href="{{ url_for('user', username=ticket.author.username) }}">
-            @{{ ticket.author.username }}</a>
-        </dd>
-        <dt class="col-sm-3">Description</dt>
-        <dd class="col-sm-9">{{ ticket.description }}</dd>
-        <dt class="col-sm-3 text-truncate">Priority</dt>
-        <dd class="col-sm-9">{{ticket.priority}}</dd>
-        <dt class="col-sm-3">Link</dt>
-        <dd class="col-sm-9"><a href="{{ticket.link}}">{{ticket.link}}</a></dd>
-        <dt class="col-sm-3 text-truncate">#</dt>
-        <dd class="col-sm-9">{{ticket.id}}</dd>
-    </dl>
+    <div class="card" style="width: 18rem;">
+        <img src="static/smile.jpg" width= "80%" height="auto" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ticket.description}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary stretched-link">Review</a>
+        </div>
+      </div>
