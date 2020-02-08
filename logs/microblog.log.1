@@ -1,4 +1,6 @@
-2020-02-07 13:46:53,816 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2020-02-07 18:54:08,070 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:54:24,984 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:54:59,173 ERROR: Exception on /user/benlarkin [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,41 +16,28 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 26, in index
-    return render_template('index.html', title='Home', tickets = tickets.items)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 135, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
-    <html{% block html_attribs %}{% endblock html_attribs %}>
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
-    {%- endblock metas %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
-    {%- block styles %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 11, in block "app_content"
-    {% include '_tickets.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/_tickets.html", line 4, in top-level template code
-    <a href="{{ url_for('user', username=post.author.username) }}">
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'post' is undefined
-2020-02-07 13:47:21,121 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:47:23,151 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/user.html", line 20, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2020-02-07 18:55:06,167 ERROR: Exception on /user/gary [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -64,44 +53,24 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 26, in index
-    return render_template('index.html', title='Home', tickets = tickets.items)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 135, in user
+    next_url=next_url, prev_url=prev_url)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
-    <html{% block html_attribs %}{% endblock html_attribs %}>
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
-    {%- endblock metas %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
-    {%- block styles %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 11, in block "app_content"
-    {% include '_tickets.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/_tickets.html", line 10, in top-level template code
-    {{ post.author.username }}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'post' is undefined
-2020-02-07 13:47:35,519 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:54:21,469 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 14:55:34,538 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:14:36,253 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:15:21,846 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:16:48,941 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:17:19,773 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:18:18,888 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/user.html", line 20, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.

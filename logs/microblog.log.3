@@ -1,83 +1,4 @@
-2020-02-07 13:27:18,043 ERROR: Exception on /ticket [POST] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 45, in ticket
-    ticket = Ticket(description=form.description.data, author=current_user, priority=form.priority.data, link=form.link.data)
-  File "<string>", line 4, in __init__
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/state.py", line 441, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/state.py", line 438, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/ext/declarative/base.py", line 842, in _declarative_constructor
-    setattr(self, k, kwargs[k])
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 268, in __set__
-    instance_state(instance), instance_dict(instance), value, None
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 1003, in set
-    value = self.fire_replace_event(state, dict_, value, old, initiator)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 1026, in fire_replace_event
-    state, value, previous, initiator or self._replace_token
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 1435, in emit_backref_from_scalar_set_event
-    instance_state(child),
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'AnonymousUserMixin' object has no attribute '_sa_instance_state'
-2020-02-07 13:28:20,920 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:28:24,588 ERROR: Exception on /ticket [POST] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 45, in ticket
-    ticket = Ticket(description=form.description.data, author="current_user", priority=form.priority.data, link=form.link.data)
-  File "<string>", line 4, in __init__
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/state.py", line 441, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
-    compat.reraise(exc_type, exc_value, exc_tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/state.py", line 438, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/ext/declarative/base.py", line 842, in _declarative_constructor
-    setattr(self, k, kwargs[k])
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 268, in __set__
-    instance_state(instance), instance_dict(instance), value, None
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 1003, in set
-    value = self.fire_replace_event(state, dict_, value, old, initiator)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 1026, in fire_replace_event
-    state, value, previous, initiator or self._replace_token
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 1435, in emit_backref_from_scalar_set_event
-    instance_state(child),
-AttributeError: 'str' object has no attribute '_sa_instance_state'
-2020-02-07 13:28:50,140 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:31:03,581 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:31:35,772 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:39:08,128 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:39:12,643 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2020-02-07 13:46:53,816 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -93,10 +14,94 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 27, in index
-    if posts.has_next else None
-NameError: name 'posts' is not defined
-2020-02-07 13:39:42,888 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:39:57,552 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:41:43,386 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:42:37,491 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 26, in index
+    return render_template('index.html', title='Home', tickets = tickets.items)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
+    {%- block styles %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 11, in block "app_content"
+    {% include '_tickets.html' %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/_tickets.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2020-02-07 13:47:21,121 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 13:47:23,151 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 26, in index
+    return render_template('index.html', title='Home', tickets = tickets.items)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
+    {%- block styles %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 11, in block "app_content"
+    {% include '_tickets.html' %}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/_tickets.html", line 10, in top-level template code
+    {{ post.author.username }}
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2020-02-07 13:47:35,519 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 13:54:21,469 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 14:55:34,538 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:14:36,253 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:15:21,846 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:16:48,941 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:17:19,773 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:18:18,888 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
