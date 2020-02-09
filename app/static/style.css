@@ -1,5 +1,5 @@
 body {
-	background: url('https://images.unsplash.com/photo-1479981280584-037818c1297d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80') no-repeat center center fixed;
+	background: url("https://i.ibb.co/3cSjCh3/New-Project.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -17,7 +17,8 @@ body {
   border-radius: 15px;
 }
 
- 
+
+
 .jumbotron {
     padding: 5em inherit;
 } 

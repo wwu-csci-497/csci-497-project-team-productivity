@@ -1,107 +1,78 @@
-2020-02-07 13:46:53,816 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 26, in index
-    return render_template('index.html', title='Home', tickets = tickets.items)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
-    <html{% block html_attribs %}{% endblock html_attribs %}>
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
-    {%- endblock metas %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
-    {%- block styles %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 11, in block "app_content"
-    {% include '_tickets.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/_tickets.html", line 4, in top-level template code
-    <a href="{{ url_for('user', username=post.author.username) }}">
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'post' is undefined
-2020-02-07 13:47:21,121 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:47:23,151 ERROR: Exception on /index [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 26, in index
-    return render_template('index.html', title='Home', tickets = tickets.items)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
-    <html{% block html_attribs %}{% endblock html_attribs %}>
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
-    {%- endblock metas %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
-    {%- block styles %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/index.html", line 11, in block "app_content"
-    {% include '_tickets.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/_tickets.html", line 10, in top-level template code
-    {{ post.author.username }}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'post' is undefined
-2020-02-07 13:47:35,519 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 13:54:21,469 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 14:55:34,538 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:14:36,253 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:15:21,846 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:16:48,941 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:17:19,773 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-02-07 15:18:18,888 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:20:15,874 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:21:32,419 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:21:54,956 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:22:11,777 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:26:04,203 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:26:50,525 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:29:52,727 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:30:42,870 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:31:28,008 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:31:46,459 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:32:20,744 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:33:15,109 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:34:16,675 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:34:32,564 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:35:11,349 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:41:03,423 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:41:59,048 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:42:25,975 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:45:59,200 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:47:14,251 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:47:54,929 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:51:04,671 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 15:52:49,037 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:02:17,761 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:13:34,939 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:14:39,139 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:16:12,392 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:30:41,180 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:31:35,850 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:39:52,848 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:40:27,111 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 16:40:54,426 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:28:53,165 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:29:08,519 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:30:35,177 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:32:10,708 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:32:40,560 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:32:51,805 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:33:04,675 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:33:29,047 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:33:48,495 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:33:55,972 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 17:37:41,140 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:10:06,102 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:17:55,648 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:18:22,335 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:19:20,955 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:20:48,574 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:21:03,983 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:22:30,340 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:23:22,999 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:23:34,016 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:23:41,766 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:24:02,013 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:25:27,207 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:28:12,561 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:29:31,327 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:31:49,947 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:33:27,446 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:34:14,146 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:38:04,472 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:38:23,573 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:40:13,886 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:41:34,047 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:41:56,060 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:42:53,599 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:43:04,198 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:43:18,527 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:44:47,555 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:46:13,852 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:46:26,939 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:47:31,399 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:47:40,132 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:48:26,977 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:49:05,295 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:50:50,713 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:51:13,763 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-02-07 18:51:54,010 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
