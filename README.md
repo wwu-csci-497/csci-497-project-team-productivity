@@ -1,3 +1,8 @@
-# Welcome to Microblog!
+# Welcome to teamTrack!
 
-This is an example application featured in my [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). See the tutorial for instructions on how to work with it.
+To use this software:
+1) create a virtual environment
+
+//code virtualenv venv
+
+2) 
