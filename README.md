@@ -2,7 +2,7 @@
 
 1. create a virtual environment
 ```python
-code virtualenv venv
+virtualenv venv
 ```
 
 2. Activate the environment
