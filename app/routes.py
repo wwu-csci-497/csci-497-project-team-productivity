@@ -25,6 +25,7 @@ def index():
         page, app.config['POSTS_PER_PAGE'], False)
     return render_template('index.html', title='Home', tickets = tickets.items)
 
+@login_required
 @app.route('/ticket', methods = ['GET', 'POST'])
 def ticket():
     form = TicketForm()

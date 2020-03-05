@@ -39,3 +39,4 @@ jinja2.exceptions.TemplateSyntaxError: Block names in Jinja have to be valid Pyt
 2020-02-08 16:30:18,890 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
 2020-02-08 16:31:07,516 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
 2020-02-08 16:31:39,046 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-03-05 12:19:52,487 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
