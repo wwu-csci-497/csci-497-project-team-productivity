@@ -3,14 +3,43 @@
 
 {% block app_content %}
         <div class="container">
-          <h1 class="display-4" align=center>Open Tickets</h1>
+          <div class="row">
+          <div class = "col">
+            <h1 class="display-4">Open Tickets</h1>
+            {% for ticket in tickets %}
+            {% include '_tickets.html' %}
+                <br>
+            {% endfor %}
+          </div>
+          <div class = "col">
+            <h1 class="display-4">In Development</h1>
+            {% for ticket in tickets %}
+            {% include '_tickets.html' %}
+                <br>
+            {% endfor %}
+          </div>
+          <div class = "col">
+            <h1 class="display-4">Testing</h1>
+            {% for ticket in tickets %}
+            {% include '_tickets.html' %}
+                <br>
+            {% endfor %}
+          </div>
+          <div class = "col">
+            <h1 class="display-4">Completed</h1>
+            {% for ticket in tickets %}
+            {% include '_tickets.html' %}
+                <br>
+            {% endfor %}
+          </div>
         </div>
-    {% if form %}
+        </div>
+    <!-- {% if form %}
     {{ wtf.quick_form(form) }}
     <br>
-    {% endif %}
-    {% for ticket in tickets %}
+    {% endif %} -->
+    <!-- {% for ticket in tickets %}
         {% include '_tickets.html' %}
         <br>
-    {% endfor %}
+    {% endfor %} -->
 {% endblock %}

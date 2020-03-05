@@ -22,3 +22,19 @@ body {
 .jumbotron {
     padding: 5em inherit;
 } 
+
+/* .container{
+	flex-direction: row;
+} */
+section {
+	max-width: 160px;
+	height: auto;
+	border: 1px solid #a2a2a2;
+	text-align: center;
+	margin: 10px;
+  }
+
+.parent--products {
+	display: flex;
+	justify-content: center;
+  }
