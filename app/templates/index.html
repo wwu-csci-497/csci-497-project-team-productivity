@@ -11,22 +11,22 @@
             {% endfor %}
           </section>
           <section class = "tickets">
-            <h1 class="display-4">Development</h1>
-            {% for ticket in tickets %}
+            <h1 class="display-4">In-Progress</h1>
+            {% for ticket in wiptickets %}
             {% include '_tickets.html' %}
                 <br>
             {% endfor %}
           </section>
           <section class = "tickets">
             <h1 class="display-4">Testing</h1>
-            {% for ticket in tickets %}
+            {% for ticket in testingtickets %}
             {% include '_tickets.html' %}
                 <br>
             {% endfor %}
           </section>
           <section class = "tickets">
-            <h1 class="display-4">Completed</h1>
-            {% for ticket in tickets %}
+            <h1 class="display-4">Resolved</h1>
+            {% for ticket in closedtickets %}
             {% include '_tickets.html' %}
                 <br>
             {% endfor %}
