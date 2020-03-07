@@ -65,6 +65,9 @@ class User(UserMixin, db.Model):
     def get_tickets(self):
         return Ticket.query.order_by(Ticket.timestamp.desc())
 
+    def get_specific_ticket(self, ticket_id):
+        return Ticket.query.filter(Ticket.id == ticket_id)
+
     def get_open_tickets(self):
         return Ticket.query.filter(Ticket.tag == 'open').order_by(Ticket.timestamp.desc())
     

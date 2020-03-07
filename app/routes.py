@@ -4,7 +4,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
-    ResetPasswordRequestForm, ResetPasswordForm, TicketForm
+    ResetPasswordRequestForm, ResetPasswordForm, TicketForm, UpdateForm
 from app.models import User, Post, Ticket
 from app.email import send_password_reset_email
 
@@ -42,6 +42,20 @@ def ticket():
         flash('Your ticket is now live!')
         return redirect(url_for('index'))
     return render_template('ticket.html', title='Home', form=form)
+
+# need to add check if ticket exists after queriny specific id
+@login_required
+@app.route('/review/<int:ticket_id>', methods = ['GET', 'POST'])
+def update_ticket(ticket_id):
+    ticket = current_user.get_specific_ticket(ticket_id) # should check if they have the credentials to view that ticket
+    form = UpdateForm()
+    if form.validate_on_submit():
+        ticket = Ticket(description=ticket.description.data, author=ticket.user_id, priority=ticket.priority.data, link=ticket.link.data, tag=ticket.tag)
+        db.session.commit()
+        flash('Ticket Updated')
+        return redirect(url_for('index'))
+    return render_template('edit_ticket.html', title='Home', form=form)
+
 
 @app.route('/explore')
 @login_required

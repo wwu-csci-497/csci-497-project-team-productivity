@@ -11,6 +11,9 @@ class TicketForm(FlaskForm):
     link = StringField('Direct Link')
     submit = SubmitField('Submit')
 
+class UpdateForm(FlaskForm):
+    tag = SelectField('Tag', choices = [('Open','open'), ('In Progress', 'wip'), ('Testing', 'testing'), ('Resolved', 'closed')], validators=[DataRequired()])
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
