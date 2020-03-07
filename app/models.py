@@ -67,6 +67,15 @@ class User(UserMixin, db.Model):
 
     def get_open_tickets(self):
         return Ticket.query.filter(Ticket.tag == 'open').order_by(Ticket.timestamp.desc())
+    
+    def get_wip_tickets(self):
+        return Ticket.query.filter(Ticket.tag == 'wip').order_by(Ticket.timestamp.desc())
+    
+    def get_testing_tickets(self):
+        return Ticket.query.filter(Ticket.tag == 'testing').order_by(Ticket.timestamp.desc())
+    
+    def get_closed_tickets(self):
+        return Ticket.query.filter(Ticket.tag == 'closed').order_by(Ticket.timestamp.desc())
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(

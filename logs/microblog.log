@@ -102,3 +102,4 @@ Traceback (most recent call last):
 NameError: name 'tickets' is not defined
 2020-03-07 13:39:40,405 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
 2020-03-07 13:39:56,349 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-03-07 13:43:10,862 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]

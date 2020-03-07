@@ -23,7 +23,13 @@ def index():
     page = request.args.get('page', 1, type=int)
     opentickets = current_user.get_open_tickets().paginate(
         page, app.config['POSTS_PER_PAGE'], False)
-    return render_template('index.html', title='Home', opentickets = opentickets.items)
+    wiptickets = current_user.get_wip_tickets().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    testingtickets = current_user.get_testing_tickets().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    closedtickets = current_user.get_closed_tickets().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    return render_template('index.html', title='Home', opentickets = opentickets.items, wiptickets= wiptickets.items, testingtickes = testingtickets.items, closedtickets = closedtickets.items)
 
 @login_required
 @app.route('/ticket', methods = ['GET', 'POST'])
