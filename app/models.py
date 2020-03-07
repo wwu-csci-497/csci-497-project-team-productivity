@@ -65,6 +65,9 @@ class User(UserMixin, db.Model):
     def get_tickets(self):
         return Ticket.query.order_by(Ticket.timestamp.desc())
 
+    def get_open_tickets(self):
+        return Ticket.query.filter(Ticket.tag == 'open').order_by(Ticket.timestamp.desc())
+
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in},
@@ -101,6 +104,7 @@ class Ticket(db.Model):
     link = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    tag = db.Column(db.String(20))
 
     def __repr__(self):
         return '<Ticket {}>'.format(self.body)

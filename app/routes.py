@@ -21,16 +21,16 @@ def before_request():
 @login_required
 def index():
     page = request.args.get('page', 1, type=int)
-    tickets = current_user.get_tickets().paginate(
+    opentickets = current_user.get_open_tickets().paginate(
         page, app.config['POSTS_PER_PAGE'], False)
-    return render_template('index.html', title='Home', tickets = tickets.items)
+    return render_template('index.html', title='Home', opentickets = opentickets.items)
 
 @login_required
 @app.route('/ticket', methods = ['GET', 'POST'])
 def ticket():
     form = TicketForm()
     if form.validate_on_submit():
-        ticket = Ticket(description=form.description.data, author=current_user, priority=form.priority.data, link=form.link.data)
+        ticket = Ticket(description=form.description.data, author=current_user, priority=form.priority.data, link=form.link.data, tag='open')
         db.session.add(ticket)
         db.session.commit()
         flash('Your ticket is now live!')
