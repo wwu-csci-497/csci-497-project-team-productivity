@@ -57,6 +57,14 @@ def edit_ticket(ticket_id):
         return redirect(url_for('index'))
     return render_template('edit_ticket.html', title='Home', ticket = ticket, form=form)
 
+@login_required
+@app.route('/delete/<ticket_id>', methods = ['GET','POST'])
+def delete_ticket(ticket_id):
+    ticket = current_user.get_specific_ticket(ticket_id) # should check if they have the credentials to delete that ticket
+    db.session.delete(ticket)
+    db.session.commit()
+    flash('Ticket Deleted')
+    return redirect(url_for('index'))
 
 @app.route('/explore')
 @login_required
