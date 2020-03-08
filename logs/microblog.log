@@ -1,9 +1,4 @@
-2020-03-08 13:34:27,093 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:35:24,408 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:36:32,660 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:37:13,471 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:48:49,578 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:48:56,428 ERROR: Exception on /edit_ticket/5 [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2020-03-08 14:10:56,989 ERROR: Exception on /edit_ticket/6 [GET] [in /Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -19,51 +14,25 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/routes.py", line 58, in edit_ticket
     return render_template('edit_ticket.html', title='Home', ticket = ticket, form=form)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 129, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/edit_ticket.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 3, in block "doc"
-    <html{% block html_attribs %}{% endblock html_attribs %}>
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 11, in block "html"
-    {%- endblock metas %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 13, in block "body"
-    {%- block styles %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/base.html", line 51, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/edit_ticket.html", line 6, in block "app_content"
-    <a href="{{ url_for('delete', ticket_id=ticket.id) }}"  class="btn btn-danger"style="float: right;">Delete</button>
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/ben/code/497csci/csci-497-project-team-productivity/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'delete' with values ['ticket_id']. Did you mean 'delete_ticket' instead?
-2020-03-08 13:49:15,711 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:49:57,657 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:50:47,633 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:52:07,566 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:52:55,731 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:53:29,523 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:55:04,868 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:56:19,387 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:58:21,260 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 13:59:53,671 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
-2020-03-08 14:03:22,465 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+  File "/Users/ben/code/497csci/csci-497-project-team-productivity/app/templates/edit_ticket.html", line 87, in template
+    {% block disqus %}{% endblock %}
+jinja2.exceptions.TemplateAssertionError: block 'disqus' defined twice
+2020-03-08 14:11:39,628 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-03-08 14:11:56,694 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-03-08 14:12:31,538 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
