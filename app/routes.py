@@ -5,7 +5,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
     ResetPasswordRequestForm, ResetPasswordForm, TicketForm, UpdateForm
-from app.models import User, Post, Ticket
+from app.models import User, Ticket
 from app.email import send_password_reset_email
 
 
