@@ -22,6 +22,9 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
+class InviteForm(FlaskForm):
+    username = StringField('Username to Invite', validators=[DataRequired()])
+    submit = SubmitField('Send Invite')
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])

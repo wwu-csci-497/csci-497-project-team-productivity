@@ -4,7 +4,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
-    ResetPasswordRequestForm, ResetPasswordForm, TicketForm, UpdateForm
+    ResetPasswordRequestForm, ResetPasswordForm, TicketForm, UpdateForm, InviteForm
 from app.models import User, Ticket
 from app.email import send_password_reset_email
 
@@ -30,6 +30,19 @@ def index():
     closedtickets = current_user.get_closed_tickets().paginate(
         page, app.config['POSTS_PER_PAGE'], False)
     return render_template('index.html', title='Home', opentickets = opentickets.items, wiptickets= wiptickets.items, testingtickets = testingtickets.items, closedtickets = closedtickets.items)
+
+@app.route('/invite', methods=['GET', 'POST'])
+@login_required
+def invite():
+    form = InviteForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is None:
+            flash('User does not exist')
+            return redirect(url_for('invite'))
+        flash('User will be notified of invite')
+        return redirect(url_for('index'))
+    return render_template('invite.html', form=form)
 
 @login_required
 @app.route('/ticket', methods = ['GET', 'POST'])
