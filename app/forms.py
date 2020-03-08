@@ -12,7 +12,9 @@ class TicketForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class UpdateForm(FlaskForm):
-    tag = SelectField('Tag', choices = [('Open','open'), ('In Progress', 'wip'), ('Testing', 'testing'), ('Resolved', 'closed')], validators=[DataRequired()])
+    tag = SelectField('Tag', choices = [('open','Open'), ('wip', 'In Progress'), ('testing', 'Testing'), ('closed', 'Resolved')])
+    priority = SelectField('Priority', choices = [('1',1), ('2', 2), ('2', 2), ('3', 3), ('4', 4), ('5', 5)])
+    submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
