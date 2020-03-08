@@ -63,3 +63,4 @@ Traceback (most recent call last):
     posts = user.posts.order_by(Post.timestamp.desc()).paginate(
 AttributeError: 'User' object has no attribute 'posts'
 2020-03-08 15:07:23,978 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-03-08 15:53:18,776 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
