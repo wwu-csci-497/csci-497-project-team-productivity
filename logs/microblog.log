@@ -41,3 +41,4 @@ jinja2.exceptions.TemplateAssertionError: block 'disqus' defined twice
 2020-03-08 14:26:47,782 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
 2020-03-08 14:29:21,093 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
 2020-03-08 14:30:03,749 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
+2020-03-08 14:42:13,417 INFO: Microblog startup [in /Users/ben/code/497csci/csci-497-project-team-productivity/app/__init__.py:47]
